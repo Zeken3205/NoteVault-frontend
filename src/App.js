@@ -6,16 +6,22 @@ import Navbar from './components/Navbar';
 import About from './components/About';
 import Home from './components/Home'
 
+import NoteState from './Context/NoteState';
+
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/about" element={<About />} />
-        </Routes>
-      </BrowserRouter>
+      <NoteState>
+        <BrowserRouter>
+          <Navbar />
+          <div className="container">
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/about" element={<About />} />
+            </Routes>
+          </div>
+        </BrowserRouter>
+      </NoteState>
     </>
   );
 }
