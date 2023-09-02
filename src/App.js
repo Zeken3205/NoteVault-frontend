@@ -8,6 +8,9 @@ import Alert from './components/Alert';
 import NoteState from './Context/Notestate.js';
 import Alertstate from './Context/Alertstate';
 import Alertcontext from './Context/Alertcontext';
+import Login from './components/login';
+import SignUp from './components/signup';
+import Error from './components/Error';
 
 function App() {
   return (
@@ -30,6 +33,9 @@ function Content() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/signup" element={<SignUp />} />
+          <Route exact path="/error" element={<Error />} />
         </Routes>
       </div>
     </BrowserRouter>
