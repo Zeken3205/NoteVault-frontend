@@ -10,7 +10,7 @@ import Alertstate from './Context/Alertstate';
 import Alertcontext from './Context/Alertcontext';
 import Login from './components/login';
 import SignUp from './components/signup';
-import Error from './components/Error';
+
 
 function App() {
   return (
@@ -35,7 +35,6 @@ function Content() {
           <Route exact path="/about" element={<About />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<SignUp />} />
-          <Route exact path="/error" element={<Error />} />
         </Routes>
       </div>
     </BrowserRouter>
