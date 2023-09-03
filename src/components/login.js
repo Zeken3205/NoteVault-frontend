@@ -26,7 +26,7 @@ const Login = () => {
 
         }
         else {
-            alert("Invalid Credentials")
+            alertcontext.showAlert("Invalid Credentials", "danger");
         }
     }
     const onChange = (e) => {
@@ -34,6 +34,7 @@ const Login = () => {
     }
     return (
         <div>
+            <h2>Login to Continue</h2>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>

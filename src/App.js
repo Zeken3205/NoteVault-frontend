@@ -10,7 +10,7 @@ import Alertstate from './Context/Alertstate';
 import Alertcontext from './Context/Alertcontext';
 import Login from './components/login';
 import SignUp from './components/signup';
-
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -31,8 +31,9 @@ function Content() {
       <Alert alert={alertcontext.alert} />
       <div className="container">
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/about" element={<About />} />
+          <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path="/about" element={<ProtectedRoute><About /></ProtectedRoute>} />
+
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<SignUp />} />
         </Routes>
