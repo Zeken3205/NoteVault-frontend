@@ -8,10 +8,13 @@ import Alert from './components/Alert';
 import NoteState from './Context/Notestate.js';
 import Alertstate from './Context/Alertstate';
 import Alertcontext from './Context/Alertcontext';
+// eslint-disable-next-line
 import Login from './components/login';
+// eslint-disable-next-line
 import SignUp from './components/signup';
 import ProtectedRoute from './components/ProtectedRoute';
-
+import Authpage from './components/Authpage';
+import NavbarView from './components/NavbarView';
 function App() {
   return (
     <NoteState>
@@ -27,15 +30,17 @@ function Content() {
 
   return (
     <BrowserRouter>
-      <Navbar />
+      <NavbarView>
+        <Navbar />
+      </NavbarView>
+
       <Alert alert={alertcontext.alert} />
       <div className="container">
         <Routes>
           <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
           <Route path="/about" element={<ProtectedRoute><About /></ProtectedRoute>} />
-
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/signup" element={<SignUp />} />
+          <Route exact path="/login" element={<Authpage />} />
+          {/* <Route exact path="/signup" element={<SignUp />} /> */}
         </Routes>
       </div>
     </BrowserRouter>

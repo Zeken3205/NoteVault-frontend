@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-
+import "../css files/Signup.css"
 const SignUp = () => {
     const [signupcredentials, setSignupCredentials] = useState({ name: "", email: "", password: "", retypePassword: "" });
     let navigate = useNavigate();
